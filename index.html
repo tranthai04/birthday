@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <title>Birthday Love Surprise</title>
 
   <style>
+
+    /* =========================
+       CƠ BẢN
+       ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -16,112 +23,191 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top, #fff0f7, #ffd6e7, #ffb6d0);
+      background: radial-gradient(
+        circle at top,
+        #fff0f7,
+        #ffd6e7,
+        #ffb6d0
+      );
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       overflow: hidden;
       padding: 18px;
     }
 
-   .app {
-  width: 100%;
-  max-width: 450px;
-  height: min(calc(100vh - 36px), 800px);
 
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 32px;
-  padding: 24px;
-  text-align: center;
-  position: relative;
+    /* =========================
+       KHUNG CHÍNH
+       ========================= */
 
-  overflow-x: hidden;
-  overflow-y: auto;
+    .app {
+      width: 100%;
+      max-width: 450px;
 
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
+      height: min(calc(100vh - 36px), 800px);
 
-  box-shadow: 0 25px 70px rgba(255, 70, 140, 0.35);
-  animation: pop 0.6s ease;
-  z-index: 3;
-}
+      background: rgba(255, 255, 255, 0.92);
 
-/* Thanh cuộn */
-.app::-webkit-scrollbar {
-  width: 6px;
-}
+      border-radius: 32px;
+      padding: 24px;
 
-.app::-webkit-scrollbar-track {
-  background: transparent;
-}
+      text-align: center;
 
-.app::-webkit-scrollbar-thumb {
-  background: #ff8fba;
-  border-radius: 10px;
-}
+      position: relative;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+
+      box-shadow:
+        0 25px 70px rgba(255, 70, 140, 0.35);
+
+      animation: pop 0.6s ease;
+
+      z-index: 3;
+    }
+
+    .app::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .app::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .app::-webkit-scrollbar-thumb {
+      background: #ff8fba;
+      border-radius: 10px;
+    }
+
+
+    /* =========================
+       ANIMATION KHUNG
+       ========================= */
+
     @keyframes pop {
+
       from {
         opacity: 0;
         transform: scale(0.92) translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: scale(1) translateY(0);
       }
+
     }
+
+
+    /* =========================
+       PROGRESS
+       ========================= */
 
     .progress {
       width: 100%;
       height: 9px;
+
       background: #ffe1ef;
+
       border-radius: 100px;
+
       margin-bottom: 18px;
+
       overflow: hidden;
     }
 
     .progress span {
       display: block;
+
       height: 100%;
-      width: 20%;
+      width: 16.66%;
+
       border-radius: 100px;
-      background: linear-gradient(135deg, #ff4f9a, #ff2474);
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff4f9a,
+          #ff2474
+        );
+
       transition: 0.4s ease;
     }
 
+
+    /* =========================
+       BADGE
+       ========================= */
+
     .badge {
       display: inline-block;
+
       background: #fff0f7;
       color: #ff3f87;
+
       padding: 7px 15px;
+
       border-radius: 50px;
+
       font-size: 13px;
       font-weight: 700;
+
       margin-bottom: 14px;
     }
 
+
+    /* =========================
+       TEXT
+       ========================= */
+
     h1 {
       color: #ff2f7d;
+
       font-size: 28px;
+
       line-height: 1.25;
+
       margin-bottom: 10px;
     }
 
     p {
       color: #70495b;
+
       font-size: 15px;
+
       line-height: 1.7;
+
       margin-bottom: 15px;
     }
 
+
+    /* =========================
+       INPUT
+       ========================= */
+
     input {
       width: 100%;
+
       border: 2px solid #ffd0e4;
+
       outline: none;
+
       border-radius: 16px;
+
       padding: 14px 16px;
+
       text-align: center;
+
       color: #ff2f7d;
+
       font-size: 15px;
+
       margin-bottom: 14px;
     }
 
@@ -129,55 +215,111 @@
       border-color: #ff5f9e;
     }
 
+
+    /* =========================
+       ẢNH CÔ GÁI
+       ========================= */
+
     .girl-card {
       width: 135px;
       height: 135px;
+
       margin: 8px auto 14px;
+
       border-radius: 50%;
+
       padding: 5px;
-      background: linear-gradient(135deg, #ff5f9e, #ffd166, #ff8fab);
-      box-shadow: 0 15px 35px rgba(255, 79, 154, 0.28);
-      animation: softFloat 3s ease-in-out infinite;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff5f9e,
+          #ffd166,
+          #ff8fab
+        );
+
+      box-shadow:
+        0 15px 35px
+        rgba(255, 79, 154, 0.28);
+
+      animation:
+        softFloat 3s
+        ease-in-out infinite;
     }
 
     .girl-card img {
       width: 100%;
       height: 100%;
+
       border-radius: 50%;
+
       object-fit: cover;
+
       border: 4px solid white;
     }
 
     @keyframes softFloat {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-8px);
       }
+
     }
+
+
+    /* =========================
+       GIF / EMOJI
+       ========================= */
 
     .cute-gif {
       width: 190px;
       height: 170px;
+
       margin: 10px auto 18px;
+
       border-radius: 26px;
-      background: linear-gradient(145deg, #fff7fb, #ffe2ef);
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff7fb,
+          #ffe2ef
+        );
+
       border: 2px solid #ffd0e4;
+
       position: relative;
+
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       overflow: hidden;
-      box-shadow: 0 14px 30px rgba(255, 79, 154, 0.2);
+
+      box-shadow:
+        0 14px 30px
+        rgba(255, 79, 154, 0.2);
     }
 
     .cute-gif::before,
     .cute-gif::after {
+
       content: "💖";
+
       position: absolute;
+
       font-size: 26px;
-      animation: flyHeart 3s infinite ease-in-out;
+
+      animation:
+        flyHeart 3s
+        infinite
+        ease-in-out;
     }
 
     .cute-gif::before {
@@ -188,19 +330,35 @@
     .cute-gif::after {
       right: 22px;
       top: 25px;
+
       animation-delay: 0.8s;
     }
 
     .gif-emoji {
       font-size: 78px;
-      animation: bounce 1.3s infinite ease-in-out;
+
+      animation:
+        bounce 1.3s
+        infinite
+        ease-in-out;
+
       z-index: 2;
     }
 
+
+    /* =========================
+       SPARKLE
+       ========================= */
+
     .sparkle {
       position: absolute;
+
       font-size: 18px;
-      animation: sparkle 1.8s infinite ease-in-out;
+
+      animation:
+        sparkle 1.8s
+        infinite
+        ease-in-out;
     }
 
     .sparkle.one {
@@ -211,78 +369,143 @@
     .sparkle.two {
       right: 38px;
       bottom: 30px;
+
       animation-delay: 0.5s;
     }
 
     .sparkle.three {
       left: 78px;
       bottom: 18px;
+
       animation-delay: 1s;
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0) scale(1);
+
+      0%,
+      100% {
+        transform:
+          translateY(0)
+          scale(1);
       }
+
       50% {
-        transform: translateY(-12px) scale(1.07);
+        transform:
+          translateY(-12px)
+          scale(1.07);
       }
+
     }
 
     @keyframes flyHeart {
-      0%, 100% {
-        transform: translateY(0) scale(1);
+
+      0%,
+      100% {
+        transform:
+          translateY(0)
+          scale(1);
+
         opacity: 0.8;
       }
+
       50% {
-        transform: translateY(-20px) scale(1.2);
+        transform:
+          translateY(-20px)
+          scale(1.2);
+
         opacity: 1;
       }
+
     }
 
     @keyframes sparkle {
-      0%, 100% {
-        transform: scale(0.7) rotate(0deg);
+
+      0%,
+      100% {
+        transform:
+          scale(0.7)
+          rotate(0deg);
+
         opacity: 0.5;
       }
+
       50% {
-        transform: scale(1.3) rotate(25deg);
+        transform:
+          scale(1.3)
+          rotate(25deg);
+
         opacity: 1;
       }
+
     }
+
+
+    /* =========================
+       LOVE NOTE
+       ========================= */
 
     .love-note {
       background: #fff5fa;
+
       border: 1.5px dashed #ff8fba;
+
       border-radius: 18px;
+
       padding: 14px;
+
       color: #ff3f87;
+
       font-size: 14px;
+
       line-height: 1.6;
+
       margin-bottom: 14px;
     }
 
+
+    /* =========================
+       BUTTON
+       ========================= */
+
     .buttons {
       display: flex;
+
       gap: 10px;
+
       margin-top: 14px;
     }
 
     button {
       border: none;
+
       border-radius: 16px;
+
       padding: 13px 18px;
+
       font-weight: 800;
+
       cursor: pointer;
+
       transition: 0.25s ease;
+
       font-size: 14px;
     }
 
     .btn-main {
       flex: 1;
+
       color: white;
-      background: linear-gradient(135deg, #ff5f9e, #ff2474);
-      box-shadow: 0 10px 24px rgba(255, 36, 116, 0.35);
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff5f9e,
+          #ff2474
+        );
+
+      box-shadow:
+        0 10px 24px
+        rgba(255, 36, 116, 0.35);
     }
 
     .btn-main:hover {
@@ -291,103 +514,316 @@
 
     .btn-soft {
       color: #ff3f87;
+
       background: #fff0f7;
     }
 
+
+    /* =========================
+       GAME BẮT TIM
+       ========================= */
+
     .game-box {
       height: 220px;
-      background: linear-gradient(180deg, #fff7fb, #ffe2ef);
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff7fb,
+          #ffe2ef
+        );
+
       border: 2px dashed #ff95bd;
+
       border-radius: 24px;
+
       position: relative;
+
       overflow: hidden;
+
       margin-top: 14px;
     }
 
     .heart-game {
       position: absolute;
+
       top: -40px;
+
       font-size: 32px;
+
       cursor: pointer;
-      animation: fall 3s linear forwards;
+
+      animation:
+        fall 3s
+        linear forwards;
+
       user-select: none;
     }
 
     @keyframes fall {
+
       to {
         top: 235px;
       }
+
     }
 
     .score {
       color: #ff2f7d;
+
       font-weight: 800;
+
       margin-top: 10px;
     }
+
+
+    /* =========================
+       ẨN
+       ========================= */
 
     .hidden {
       display: none;
     }
 
-    .signature {
-      color: #ff2f7d;
-      font-size: 19px;
-      font-weight: 900;
-      margin-top: 12px;
-    }
-
-    .floating-heart {
-      position: fixed;
-      bottom: -30px;
-      font-size: 24px;
-      pointer-events: none;
-      animation: floatUp 6s linear forwards;
-      z-index: 1;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.9;
-      }
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .confetti {
-      position: fixed;
-      top: -20px;
-      width: 10px;
-      height: 10px;
-      pointer-events: none;
-      animation: confettiFall 3s linear forwards;
-      z-index: 10;
-    }
-
-    @keyframes confettiFall {
-      to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-      }
-    }
 
     /* =========================
-       CAKE CUTTING ANIMATION
+       =========================
+       TRÒ CHƠI LẬT THẺ
+       =========================
+       ========================= */
+
+    .memory-info {
+      color: #ff3f87;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
+    }
+
+    .memory-board {
+
+      width: 100%;
+
+      max-width: 380px;
+
+      margin: 15px auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 10px;
+
+      perspective: 1000px;
+    }
+
+
+    /* THẺ */
+
+    .memory-card {
+
+      aspect-ratio: 1 / 1;
+
+      position: relative;
+
+      cursor: pointer;
+
+      perspective: 1000px;
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    }
+
+    .memory-card.matched {
+
+      opacity: 0;
+
+      transform:
+        scale(0)
+        rotate(20deg);
+
+      pointer-events: none;
+    }
+
+    .memory-card-inner {
+
+      width: 100%;
+      height: 100%;
+
+      position: relative;
+
+      transform-style: preserve-3d;
+
+      transition:
+        transform 0.5s
+        cubic-bezier(
+          0.4,
+          0.2,
+          0.2,
+          1
+        );
+    }
+
+    .memory-card.flipped
+    .memory-card-inner {
+
+      transform:
+        rotateY(180deg);
+    }
+
+
+    /* MẶT TRƯỚC / SAU */
+
+    .memory-card-front,
+    .memory-card-back {
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      border-radius: 16px;
+
+      backface-visibility: hidden;
+
+      -webkit-backface-visibility: hidden;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 8px 18px
+        rgba(255, 79, 154, 0.18);
+    }
+
+
+    /* MẶT ÚP */
+
+    .memory-card-front {
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff5f9e,
+          #ff2474
+        );
+
+      border:
+        3px solid white;
+
+      color: white;
+
+      font-size: 28px;
+    }
+
+    .memory-card-front::before {
+
+      content: "💖";
+
+      filter:
+        drop-shadow(
+          0 3px 5px
+          rgba(0,0,0,0.12)
+        );
+    }
+
+
+    /* MẶT ẢNH */
+
+    .memory-card-back {
+
+      background: white;
+
+      border:
+        3px solid #ffd0e4;
+
+      transform:
+        rotateY(180deg);
+    }
+
+    .memory-card-back img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+    /* THÔNG BÁO TRÒ CHƠI */
+
+    .memory-message {
+
+      min-height: 48px;
+
+      color: #ff2f7d;
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      line-height: 1.5;
+
+      margin-top: 8px;
+    }
+
+
+    /* HIỆU ỨNG MATCH */
+
+    @keyframes matchPop {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+
+    }
+
+
+    /* =========================
+       CAKE CUTTING
        ========================= */
 
     .cake-cut-area {
+
       position: relative;
+
       width: 100%;
+
       max-width: 430px;
+
       height: 300px;
+
       margin: 15px auto 20px;
+
       overflow: hidden;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       touch-action: pan-y;
+
       cursor: grab;
     }
 
@@ -395,203 +831,527 @@
       cursor: grabbing;
     }
 
-    /* Bánh nguyên vẹn: hiển thị trước khi cắt */
+
+    /* BÁNH NGUYÊN */
+
     .cake-whole-image {
+
       position: absolute;
+
       top: 50%;
       left: 50%;
+
       width: 430px;
+
       max-width: none;
+
       height: auto;
-      transform: translate(-50%, -50%);
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        );
+
       user-select: none;
+
       pointer-events: none;
+
       -webkit-user-drag: none;
+
       z-index: 4;
-      transition: opacity 0.25s ease;
+
+      transition:
+        opacity 0.25s ease;
     }
 
-    /* Ảnh bánh đã cắt: cake-birthday.png là MỘT ảnh chứa 2 nửa bánh */
+
+    /* BÁNH SAU KHI CẮT */
+
     .birthday-cake-image {
+
       position: absolute;
+
       top: 50%;
       left: 50%;
+
       width: 430px;
+
       max-width: none;
+
       height: auto;
-      transform: translate(-50%, -50%) scale(0.96);
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        )
+        scale(0.96);
+
       user-select: none;
+
       pointer-events: none;
+
       -webkit-user-drag: none;
+
       z-index: 3;
+
       opacity: 0;
-      transition: opacity 0.25s ease, transform 0.9s ease;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.9s ease;
     }
 
-    .cake-cut-area.cutting .cake-whole-image {
+    .cake-cut-area.cutting
+    .cake-whole-image {
+
       opacity: 0;
     }
 
-    .cake-cut-area.cutting .birthday-cake-image {
+    .cake-cut-area.cutting
+    .birthday-cake-image {
+
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-      filter: brightness(1.08);
+
+      transform:
+        translate(
+          -50%,
+          -50%
+        )
+        scale(1);
+
+      filter:
+        brightness(1.08);
     }
 
-    @keyframes knifeCut {
-      0% {
-        opacity: 1;
-        transform: translate(0, 0) rotate(-35deg);
-      }
-      40% {
-        opacity: 1;
-        transform: translate(-25px, 70px) rotate(-35deg);
-      }
-      70% {
-        opacity: 1;
-        transform: translate(-35px, 130px) rotate(-35deg);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-45px, 200px) rotate(-35deg);
-      }
+
+    /* =========================
+       SIGNATURE
+       ========================= */
+
+    .signature {
+
+      color: #ff2f7d;
+
+      font-size: 19px;
+
+      font-weight: 900;
+
+      margin-top: 12px;
     }
 
-    @keyframes showCut {
+
+    /* =========================
+       TIM / CONFETTI
+       ========================= */
+
+    .floating-heart {
+
+      position: fixed;
+
+      bottom: -30px;
+
+      font-size: 24px;
+
+      pointer-events: none;
+
+      animation:
+        floatUp 6s
+        linear forwards;
+
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+
       from {
-        opacity: 0;
-        transform: translateX(-50%) scaleY(0);
+
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: 0.9;
       }
+
       to {
-        opacity: 1;
-        transform: translateX(-50%) scaleY(1);
+
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
+        opacity: 0;
       }
+
     }
 
-  @media (max-width: 480px) {
-  body {
-    min-height: 100dvh;
-    height: 100dvh;
-    padding: 10px;
-    align-items: center;
-  }
 
-  .app {
-    width: 100%;
-    height: calc(100dvh - 20px);
-    max-height: calc(100dvh - 20px);
-    padding: 20px;
-    border-radius: 26px;
+    .confetti {
 
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
+      position: fixed;
 
-  h1 {
-    font-size: 24px;
-  }
+      top: -20px;
 
-  .cute-gif {
-    width: 170px;
-    height: 145px;
-  }
+      width: 10px;
+      height: 10px;
 
-  .gif-emoji {
-    font-size: 65px;
-  }
+      pointer-events: none;
 
-  .cake-cut-area {
-    height: 250px;
-  }
+      animation:
+        confettiFall 3s
+        linear forwards;
 
-  .birthday-cake-image,
-  .cake-whole-image {
-    width: 360px;
-  }
-}
+      z-index: 10;
+    }
+
+    @keyframes confettiFall {
+
+      to {
+
+        transform:
+          translateY(110vh)
+          rotate(720deg);
+
+        opacity: 0;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 480px) {
+
+      body {
+
+        min-height: 100dvh;
+
+        height: 100dvh;
+
+        padding: 10px;
+
+        align-items: center;
+      }
+
+      .app {
+
+        width: 100%;
+
+        height:
+          calc(100dvh - 20px);
+
+        max-height:
+          calc(100dvh - 20px);
+
+        padding: 20px;
+
+        border-radius: 26px;
+
+        overflow-y: scroll;
+
+        -webkit-overflow-scrolling:
+          touch;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .cute-gif {
+
+        width: 170px;
+        height: 145px;
+      }
+
+      .gif-emoji {
+        font-size: 65px;
+      }
+
+
+      /* THẺ NHỎ HƠN */
+
+      .memory-board {
+
+        grid-template-columns:
+          repeat(3, 1fr);
+
+        gap: 9px;
+      }
+
+      .memory-card-front {
+        font-size: 23px;
+      }
+
+
+      /* BÁNH */
+
+      .cake-cut-area {
+        height: 250px;
+      }
+
+      .birthday-cake-image,
+      .cake-whole-image {
+        width: 360px;
+      }
+
+    }
+
   </style>
 </head>
+
 
 <body>
 
   <div class="app">
+
+    <!-- THANH TIẾN TRÌNH -->
+
     <div class="progress">
       <span id="progressBar"></span>
     </div>
 
-    <div class="badge" id="stepBadge">Step 1 of 5</div>
+    <div
+      class="badge"
+      id="stepBadge"
+    >
+      Step 1 of 6
+    </div>
+
+
+    <!-- NỘI DUNG -->
 
     <div id="content"></div>
 
+
+    <!-- NÚT -->
+
     <div class="buttons">
-      <button class="btn-soft" id="backBtn">Trở lại</button>
-      <button class="btn-main" id="nextBtn">Tiếp tục</button>
+
+      <button
+        class="btn-soft"
+        id="backBtn"
+      >
+        Trở lại
+      </button>
+
+      <button
+        class="btn-main"
+        id="nextBtn"
+      >
+        Tiếp tục
+      </button>
+
     </div>
+
   </div>
 
+
   <script>
+
+    /* =========================
+       BIẾN
+       ========================= */
+
     let currentStep = 0;
-    let birthdayName = "Beautiful Girl";
+
+    let birthdayName =
+      "Beautiful Girl";
+
     let gameScore = 0;
+
     let gameStarted = false;
+
     let heartInterval;
 
+
+    /* =========================
+       BIẾN LẬT THẺ
+       ========================= */
+
+    let flippedCards = [];
+
+    let matchedPairs = 0;
+
+    let memoryLocked = false;
+
+
+    /* =========================
+       BIẾN CẮT BÁNH
+       ========================= */
+
     let touchStartY = 0;
+
     let mouseStartY = 0;
+
     let isDragging = false;
+
     let cakeCutDone = false;
 
-    const content = document.getElementById("content");
-    const stepBadge = document.getElementById("stepBadge");
-    const progressBar = document.getElementById("progressBar");
-    const backBtn = document.getElementById("backBtn");
-    const nextBtn = document.getElementById("nextBtn");
+
+    /* =========================
+       ELEMENT
+       ========================= */
+
+    const content =
+      document.getElementById(
+        "content"
+      );
+
+    const stepBadge =
+      document.getElementById(
+        "stepBadge"
+      );
+
+    const progressBar =
+      document.getElementById(
+        "progressBar"
+      );
+
+    const backBtn =
+      document.getElementById(
+        "backBtn"
+      );
+
+    const nextBtn =
+      document.getElementById(
+        "nextBtn"
+      );
+
+
+    /* =========================
+       ẢNH CÔ GÁI
+       ========================= */
 
     const girlPictures = [
-      "image01.JPG","image02.JPG","image03.JPG"
+
+      "image01.JPG",
+      "image02.JPG",
+      "image03.JPG"
+
     ];
 
     const randomGirlPicture =
-      girlPictures[Math.floor(Math.random() * girlPictures.length)];
+      girlPictures[
+        Math.floor(
+          Math.random()
+          *
+          girlPictures.length
+        )
+      ];
+
+
+    /* =========================
+       ẢNH CHO TRÒ LẬT THẺ
+       =========================
+
+       Bạn tự thay các file này.
+
+       Cần 6 ảnh:
+
+       card01.jpg
+       card02.jpg
+       card03.jpg
+       card04.jpg
+       card05.jpg
+       card06.jpg
+
+       Mỗi ảnh sẽ xuất hiện 2 lần.
+       ========================= */
+
+    const cardImages = [
+
+      "card01.jpg",
+      "card02.jpg",
+      "card03.jpg",
+      "card04.jpg",
+      "card05.jpg",
+      "card06.jpg"
+
+    ];
+
+
+    /* =========================
+       CUTE GIF
+       ========================= */
 
     function cuteGif(emoji) {
+
       return `
+
         <div class="cute-gif">
-          <span class="sparkle one">✨</span>
-          <span class="sparkle two">🌸</span>
-          <span class="sparkle three">✨</span>
-          <div class="gif-emoji">${emoji}</div>
+
+          <span
+            class="sparkle one"
+          >
+            ✨
+          </span>
+
+          <span
+            class="sparkle two"
+          >
+            🌸
+          </span>
+
+          <span
+            class="sparkle three"
+          >
+            ✨
+          </span>
+
+          <div class="gif-emoji">
+            ${emoji}
+          </div>
+
         </div>
+
       `;
+
     }
+
+
+    /* =========================
+       ẢNH CÔ GÁI
+       ========================= */
 
     function renderGirlPicture() {
+
       return `
+
         <div class="girl-card">
-          <img 
-            src="${randomGirlPicture}" 
+
+          <img
+            src="${randomGirlPicture}"
             alt="Birthday girl"
-            onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'"
-          />
+          >
+
         </div>
+
       `;
+
     }
 
-    function renderCakeCutting() {
-      return `
-        <div class="cake-cut-area" id="cakeCutArea">
 
-          <!-- Bánh nguyên vẹn: hiển thị trước khi cắt -->
+    /* =========================
+       CAKE
+       ========================= */
+
+    function renderCakeCutting() {
+
+      return `
+
+        <div
+          class="cake-cut-area"
+          id="cakeCutArea"
+        >
+
           <img
             src="cake-whole.png"
             class="cake-whole-image"
             alt="Bánh kem sinh nhật nguyên vẹn"
           >
 
-          <div class="knife"></div>
-          <div class="cut-line"></div>
-
-          <!-- Sau khi cắt: dùng MỘT ảnh cake-birthday.png đã được cắt sẵn -->
           <img
             src="cake-birthday.png"
             class="birthday-cake-image"
@@ -599,310 +1359,1310 @@
           >
 
         </div>
+
       `;
+
     }
 
-    function renderStep() {
-      stepBadge.textContent = `Step ${currentStep + 1} of 5`;
-      progressBar.style.width = `${((currentStep + 1) / 5) * 100}%`;
 
-      backBtn.style.visibility = currentStep === 0 ? "hidden" : "visible";
-      nextBtn.textContent = currentStep === 4 ? "Quay lại" : "Tiếp tục";
+    /* =========================
+       RENDER
+       ========================= */
+
+    function renderStep() {
+
+      stepBadge.textContent =
+        `Step ${currentStep + 1} of 6`;
+
+      progressBar.style.width =
+        `${(
+          (currentStep + 1) / 6
+        ) * 100}%`;
+
+
+      backBtn.style.visibility =
+        currentStep === 0
+          ? "hidden"
+          : "visible";
+
+
+      /*
+       * Ở bước 4 và chưa ghép xong:
+       * không cho Tiếp tục.
+       */
+
+      if (
+        currentStep === 3 &&
+        matchedPairs < 6
+      ) {
+
+        nextBtn.textContent =
+          "Ghép hết thẻ 💝";
+
+      }
+
+      else if (
+        currentStep === 5
+      ) {
+
+        nextBtn.textContent =
+          "Quay lại";
+
+      }
+
+      else {
+
+        nextBtn.textContent =
+          "Tiếp tục";
+
+      }
+
+
+      /* =========================
+         STEP 1
+         ========================= */
 
       if (currentStep === 0) {
+
         content.innerHTML = `
-          <h1>Ngày Giáng Trần của thiên thần 💝</h1>
+
+          <h1>
+            Ngày Giáng Trần của thiên thần 💝
+          </h1>
+
           ${renderGirlPicture()}
+
           ${cuteGif("🎁")}
-          <p>Nhập tên bé iuu vào nè 😘😘 </p>
-          <input id="nameInput" placeholder="Nhập đây nè bà già ...." />
+
+          <p>
+            Nhập tên bé iuu vào nè 😘😘
+          </p>
+
+          <input
+            id="nameInput"
+            placeholder="Nhập đây nè bà già ...."
+          />
+
           <div class="love-note">
-            Có bất ngờ đó bà già, ráng chơi tới cuối nghe hăm 🤣 ✨
+
+            Có bất ngờ đó bà già,
+            ráng chơi tới cuối nghe hăm 🤣 ✨
+
           </div>
+
         `;
+
       }
+
+
+      /* =========================
+         STEP 2
+         ========================= */
 
       if (currentStep === 1) {
+
         content.innerHTML = `
-          <h1>Gởi ${birthdayName} yêu dấu ❤🌸</h1>
+
+          <h1>
+            Gởi ${birthdayName} yêu dấu ❤🌸
+          </h1>
+
           ${renderGirlPicture()}
+
           ${cuteGif("💕")}
+
           <p>
-            Hôm nay là 1 ngày đặc biệt, ngày mà thiên thần giáng thế,
-            là khi ngôi sao hi vọng mang tên ${birthdayName} đáp xuống trần giang
-            cứu rỗi con tym cằn cỗi của tui 😘😘😘😘
+
+            Hôm nay là 1 ngày đặc biệt,
+            ngày mà thiên thần giáng thế,
+            là khi ngôi sao hi vọng mang tên
+            ${birthdayName}
+            đáp xuống trần giang
+            cứu rỗi con tym cằn cỗi của tui
+            😘😘😘😘
+
           </p>
+
           <div class="love-note">
-            Trách nhiệm của tui là giữ cho ngôi sao hình trái tym đó luôn sáng tỏ
-            và rực rỡ k thôi 💖
+
+            Trách nhiệm của tui là giữ cho
+            ngôi sao hình trái tym đó luôn
+            sáng tỏ và rực rỡ k thôi 💖
+
           </div>
+
         `;
+
       }
+
+
+      /* =========================
+         STEP 3
+         ========================= */
 
       if (currentStep === 2) {
+
         content.innerHTML = `
-          <h1>Bắt lấy tềnh iu của tuiii 😁💘</h1>
+
+          <h1>
+            Bắt lấy tềnh iu của tuiii 😁💘
+          </h1>
+
           ${cuteGif("💘")}
-          <p>Hãy bắt lấy những "Chái tym" của tui và giữ đó nhóe</p>
-          <button class="btn-main" onclick="startGame()">Bắt đầu</button>
-          <div class="score" id="scoreText">Số tym: 0 / 7</div>
-          <div class="game-box" id="gameBox"></div>
+
+          <p>
+
+            Hãy bắt lấy những
+            "Chái tym" của tui
+            và giữ đó nhóe
+
+          </p>
+
+          <button
+            class="btn-main"
+            onclick="startGame()"
+          >
+            Bắt đầu
+          </button>
+
+          <div
+            class="score"
+            id="scoreText"
+          >
+            Số tym: 0 / 7
+          </div>
+
+          <div
+            class="game-box"
+            id="gameBox"
+          ></div>
+
         `;
+
       }
 
+
+      /* =========================
+         STEP 4 - LẬT THẺ
+         ========================= */
+
       if (currentStep === 3) {
+
+        /*
+         * Chỉ tạo lại bàn thẻ
+         * nếu chưa chơi.
+         */
+
+        content.innerHTML = `
+
+          <h1>
+            Lật thẻ tìm cặp 💝
+          </h1>
+
+          <p>
+            Tìm 2 thẻ giống nhau
+            để chúng biến mất nhé 😘
+          </p>
+
+          <div
+            class="memory-info"
+            id="memoryInfo"
+          >
+            Đã tìm: ${matchedPairs} / 6 cặp
+          </div>
+
+          <div
+            class="memory-board"
+            id="memoryBoard"
+          ></div>
+
+          <div
+            class="memory-message"
+            id="memoryMessage"
+          >
+            Lật 2 thẻ để bắt đầu 💗
+          </div>
+
+        `;
+
+        createMemoryGame();
+
+      }
+
+
+      /* =========================
+         STEP 5 - CẮT BÁNH
+         ========================= */
+
+      if (currentStep === 4) {
+
         cakeCutDone = false;
 
         content.innerHTML = `
-          <h1>Cắt bánh kem nè 🎂</h1>
-          <p>Hãy cắt bánh để nhận lời chúc nhé 💗</p>
+
+          <h1>
+            Cắt bánh kem nè 🎂
+          </h1>
+
+          <p>
+            Hãy vuốt xuống để cắt bánh
+            và nhận lời chúc nhé 💗
+          </p>
 
           ${renderCakeCutting()}
 
-          
+          <div
+            class="love-note hidden"
+            id="wishMessage"
+          >
 
-          <div class="love-note hidden" id="wishMessage">
-          Cắt bánh xịn thế . nhớ chia cho mọi người nhé ❤✨
+            Cắt bánh xịn thế.
+            Nhớ chia cho mọi người nhé ❤✨
+
           </div>
+
         `;
 
         setupCakeSwipe();
+
       }
 
-      if (currentStep === 4) {
+
+      /* =========================
+         STEP 6 - KẾT
+         ========================= */
+
+      if (currentStep === 5) {
+
         content.innerHTML = `
-          <h1>Happy Birthday, Bé iu ${birthdayName}! 🎉</h1>
+
+          <h1>
+            Happy Birthday,
+            Bé iu ${birthdayName}! 🎉
+          </h1>
+
           ${renderGirlPicture()}
+
           ${cuteGif("🎉")}
+
           <p>
-            Mong cho bé iu luôn may mắn, yêu đời, mạnh khỏe và nhớ là thương t nhìu nhìu dô á 🤣🤣
+
+            Mong cho bé iu luôn may mắn,
+            yêu đời, mạnh khỏe và nhớ là
+            thương t nhìu nhìu dô á 🤣🤣
+
           </p>
+
           <div class="love-note">
-            Hy vong chúng mình sẽ cùng làm thật nhiều điều với nhau, luôn có nhau dù ra sao   💗
+
+            Hy vong chúng mình sẽ cùng làm
+            thật nhiều điều với nhau,
+            luôn có nhau dù ra sao 💗
+
           </div>
-          <div class="signature"> Thiên thần đáng iu 💖</div>
+
+          <div class="signature">
+
+            Thiên thần đáng iu 💖
+
+          </div>
+
         `;
 
         launchConfetti();
+
       }
+
     }
 
-    nextBtn.addEventListener("click", () => {
-      if (currentStep === 0) {
-        const input = document.getElementById("nameInput");
 
-        if (input && input.value.trim()) {
-          birthdayName = input.value.trim();
+    /* =========================
+       TẠO GAME LẬT THẺ
+       ========================= */
+
+    function createMemoryGame() {
+
+      const board =
+        document.getElementById(
+          "memoryBoard"
+        );
+
+      if (!board) return;
+
+
+      /*
+       * Tạo 2 bản sao
+       * của mỗi ảnh.
+       */
+
+      let cards = [];
+
+      cardImages.forEach(
+        (image, index) => {
+
+          cards.push({
+            id: index,
+            image: image
+          });
+
+          cards.push({
+            id: index,
+            image: image
+          });
+
         }
-      }
+      );
 
-      clearInterval(heartInterval);
-      gameStarted = false;
 
-      if (currentStep === 4) {
-        currentStep = 0;
-      } else {
-        currentStep++;
-      }
+      /*
+       * Trộn thẻ.
+       */
 
-      renderStep();
-    });
+      cards.sort(
+        () => Math.random() - 0.5
+      );
 
-    backBtn.addEventListener("click", () => {
-      if (currentStep > 0) {
-        clearInterval(heartInterval);
-        gameStarted = false;
-        currentStep--;
-        renderStep();
-      }
-    });
 
-    function startGame() {
-      if (gameStarted) return;
+      board.innerHTML = "";
 
-      gameStarted = true;
-      gameScore = 0;
 
-      const scoreText = document.getElementById("scoreText");
-      const gameBox = document.getElementById("gameBox");
+      cards.forEach(
+        (card, index) => {
 
-      scoreText.textContent = "Số tym: 0 / 7";
-      gameBox.innerHTML = "";
+          const cardElement =
+            document.createElement(
+              "div"
+            );
 
-      heartInterval = setInterval(() => {
-        const heart = document.createElement("div");
+          cardElement.className =
+            "memory-card";
 
-        heart.className = "heart-game";
-        heart.textContent =
-          ["💖", "💘", "💕", "💗", "💝"][
-            Math.floor(Math.random() * 5)
-          ];
+          cardElement.dataset.id =
+            card.id;
 
-        heart.style.left = Math.random() * 85 + "%";
+          cardElement.dataset.index =
+            index;
 
-        heart.onclick = () => {
-          gameScore++;
 
-          scoreText.textContent = `Số tym: ${gameScore} / 7`;
+          cardElement.innerHTML = `
 
-          heart.remove();
+            <div class="memory-card-inner">
 
-          if (gameScore >= 7) {
-            clearInterval(heartInterval);
-
-            gameBox.innerHTML = `
-              <div style="
-                padding:45px 15px;
-                color:#ff2f7d;
-                font-weight:900;
-                font-size:20px;
-                line-height:1.6;
-              ">
-                giỏi quá bé iu ơii 💝<br>
-                có quà siêu bự cho bé iu nè 😘✨
+              <div class="memory-card-front">
               </div>
-            `;
 
-            launchConfetti();
-          }
-        };
+              <div class="memory-card-back">
 
-        gameBox.appendChild(heart);
+                <img
+                  src="${card.image}"
+                  alt="Thẻ bí mật"
+                >
+
+              </div>
+
+            </div>
+
+          `;
+
+
+          cardElement.addEventListener(
+            "click",
+            () => {
+
+              flipMemoryCard(
+                cardElement
+              );
+
+            }
+          );
+
+
+          board.appendChild(
+            cardElement
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================
+       LẬT THẺ
+       ========================= */
+
+    function flipMemoryCard(card) {
+
+      /*
+       * Không cho lật khi đang
+       * kiểm tra 2 thẻ.
+       */
+
+      if (memoryLocked) return;
+
+
+      /*
+       * Không cho lật lại thẻ
+       * đang mở.
+       */
+
+      if (
+        card.classList.contains(
+          "flipped"
+        )
+      ) return;
+
+
+      /*
+       * Không cho lật thẻ
+       * đã tìm đúng.
+       */
+
+      if (
+        card.classList.contains(
+          "matched"
+        )
+      ) return;
+
+
+      /*
+       * Tối đa 2 thẻ.
+       */
+
+      if (
+        flippedCards.length >= 2
+      ) return;
+
+
+      card.classList.add(
+        "flipped"
+      );
+
+      flippedCards.push(card);
+
+
+      /*
+       * Khi đã có 2 thẻ
+       */
+
+      if (
+        flippedCards.length === 2
+      ) {
+
+        checkMemoryMatch();
+
+      }
+
+    }
+
+
+    /* =========================
+       KIỂM TRA CẶP
+       ========================= */
+
+    function checkMemoryMatch() {
+
+      memoryLocked = true;
+
+      const first =
+        flippedCards[0];
+
+      const second =
+        flippedCards[1];
+
+
+      const firstId =
+        first.dataset.id;
+
+      const secondId =
+        second.dataset.id;
+
+
+      const message =
+        document.getElementById(
+          "memoryMessage"
+        );
+
+
+      /*
+       * GIỐNG NHAU
+       */
+
+      if (
+        firstId === secondId
+      ) {
+
+        matchedPairs++;
+
+
+        if (message) {
+
+          message.textContent =
+            "Đúng rồi đó 😘 Hai thẻ giống nhau!";
+
+        }
+
 
         setTimeout(() => {
-          heart.remove();
-        }, 3000);
 
-      }, 650);
+          first.classList.add(
+            "matched"
+          );
+
+          second.classList.add(
+            "matched"
+          );
+
+
+          flippedCards = [];
+
+          memoryLocked = false;
+
+
+          updateMemoryInfo();
+
+
+          /*
+           * Đã tìm đủ 6 cặp.
+           */
+
+          if (
+            matchedPairs >= 6
+          ) {
+
+            finishMemoryGame();
+
+          }
+
+        }, 450);
+
+      }
+
+
+      /*
+       * KHÁC NHAU
+       */
+
+      else {
+
+        if (message) {
+
+          message.textContent =
+            "Hông giống nhau 😝 Thử lại nha!";
+
+        }
+
+
+        setTimeout(() => {
+
+          first.classList.remove(
+            "flipped"
+          );
+
+          second.classList.remove(
+            "flipped"
+          );
+
+
+          flippedCards = [];
+
+          memoryLocked = false;
+
+
+          if (message) {
+
+            message.textContent =
+              "Lật 2 thẻ để tìm cặp 💗";
+
+          }
+
+        }, 800);
+
+      }
+
     }
+
+
+    /* =========================
+       UPDATE SỐ CẶP
+       ========================= */
+
+    function updateMemoryInfo() {
+
+      const info =
+        document.getElementById(
+          "memoryInfo"
+        );
+
+      if (info) {
+
+        info.textContent =
+          `Đã tìm: ${matchedPairs} / 6 cặp`;
+
+      }
+
+    }
+
+
+    /* =========================
+       HOÀN THÀNH LẬT THẺ
+       ========================= */
+
+    function finishMemoryGame() {
+
+      const message =
+        document.getElementById(
+          "memoryMessage"
+        );
+
+
+      if (message) {
+
+        message.innerHTML = `
+          🎉 Giỏi quá bé iu! 💝
+          <br>
+          Đã tìm đủ 6 cặp rồi!
+          <br>
+          Bấm "Tiếp tục" để cắt bánh 🎂
+        `;
+
+      }
+
+
+      /*
+       * Đổi nút tiếp tục.
+       */
+
+      nextBtn.textContent =
+        "Cắt bánh 🎂";
+
+
+      /*
+       * Hiệu ứng.
+       */
+
+      launchConfetti();
+
+    }
+
+
+    /* =========================
+       NÚT TIẾP TỤC
+       ========================= */
+
+    nextBtn.addEventListener(
+      "click",
+      () => {
+
+        /* =====================
+           BƯỚC 1
+           ===================== */
+
+        if (
+          currentStep === 0
+        ) {
+
+          const input =
+            document.getElementById(
+              "nameInput"
+            );
+
+
+          if (
+            input &&
+            input.value.trim()
+          ) {
+
+            birthdayName =
+              input.value.trim();
+
+          }
+
+        }
+
+
+        /* =====================
+           BƯỚC 4
+           =====================
+
+           Chưa ghép hết:
+           không cho đi tiếp.
+           ===================== */
+
+        if (
+          currentStep === 3 &&
+          matchedPairs < 6
+        ) {
+
+          const message =
+            document.getElementById(
+              "memoryMessage"
+            );
+
+          if (message) {
+
+            message.textContent =
+              "Ghép hết 6 cặp thẻ rồi mới được đi tiếp nha 😝💗";
+
+          }
+
+          return;
+
+        }
+
+
+        clearInterval(
+          heartInterval
+        );
+
+        gameStarted = false;
+
+
+        /* =====================
+           BƯỚC CUỐI
+           ===================== */
+
+        if (
+          currentStep === 5
+        ) {
+
+          currentStep = 0;
+
+          /*
+           * Reset game lật thẻ
+           */
+
+          resetMemoryGame();
+
+        }
+
+        else {
+
+          currentStep++;
+
+        }
+
+
+        renderStep();
+
+      }
+    );
+
+
+    /* =========================
+       NÚT TRỞ LẠI
+       ========================= */
+
+    backBtn.addEventListener(
+      "click",
+      () => {
+
+        if (
+          currentStep > 0
+        ) {
+
+          clearInterval(
+            heartInterval
+          );
+
+          gameStarted = false;
+
+
+          currentStep--;
+
+
+          /*
+           * Nếu quay lại bước
+           * lật thẻ thì giữ tiến độ.
+           */
+
+          renderStep();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       RESET MEMORY
+       ========================= */
+
+    function resetMemoryGame() {
+
+      flippedCards = [];
+
+      matchedPairs = 0;
+
+      memoryLocked = false;
+
+    }
+
+
+    /* =========================
+       GAME BẮT TIM
+       ========================= */
+
+    function startGame() {
+
+      if (gameStarted)
+        return;
+
+
+      gameStarted = true;
+
+      gameScore = 0;
+
+
+      const scoreText =
+        document.getElementById(
+          "scoreText"
+        );
+
+      const gameBox =
+        document.getElementById(
+          "gameBox"
+        );
+
+
+      scoreText.textContent =
+        "Số tym: 0 / 7";
+
+      gameBox.innerHTML = "";
+
+
+      heartInterval =
+        setInterval(
+          () => {
+
+            const heart =
+              document.createElement(
+                "div"
+              );
+
+
+            heart.className =
+              "heart-game";
+
+
+            heart.textContent =
+              [
+                "💖",
+                "💘",
+                "💕",
+                "💗",
+                "💝"
+              ][
+                Math.floor(
+                  Math.random() * 5
+                )
+              ];
+
+
+            heart.style.left =
+              Math.random() * 85 + "%";
+
+
+            heart.onclick =
+              () => {
+
+                gameScore++;
+
+
+                scoreText.textContent =
+                  `Số tym: ${gameScore} / 7`;
+
+
+                heart.remove();
+
+
+                if (
+                  gameScore >= 7
+                ) {
+
+                  clearInterval(
+                    heartInterval
+                  );
+
+
+                  gameBox.innerHTML = `
+
+                    <div style="
+                      padding:45px 15px;
+                      color:#ff2f7d;
+                      font-weight:900;
+                      font-size:20px;
+                      line-height:1.6;
+                    ">
+
+                      giỏi quá bé iu ơii 💝
+                      <br>
+
+                      có quà siêu bự
+                      cho bé iu nè 😘✨
+
+                    </div>
+
+                  `;
+
+
+                  launchConfetti();
+
+                }
+
+              };
+
+
+            gameBox.appendChild(
+              heart
+            );
+
+
+            setTimeout(
+              () => {
+
+                heart.remove();
+
+              },
+              3000
+            );
+
+
+          },
+          650
+        );
+
+    }
+
+
+    /* =========================
+       CẮT BÁNH
+       ========================= */
 
     function cutCake() {
-      if (cakeCutDone) return;
 
-      const cakeArea = document.getElementById("cakeCutArea");
-      const wishMessage = document.getElementById("wishMessage");
+      if (cakeCutDone)
+        return;
 
-      if (!cakeArea) return;
+
+      const cakeArea =
+        document.getElementById(
+          "cakeCutArea"
+        );
+
+      const wishMessage =
+        document.getElementById(
+          "wishMessage"
+        );
+
+
+      if (!cakeArea)
+        return;
+
 
       cakeCutDone = true;
-      cakeArea.classList.add("cutting");
 
-      setTimeout(() => {
-        if (wishMessage) {
-          wishMessage.classList.remove("hidden");
-        }
 
-        launchConfetti();
-      }, 1200);
+      cakeArea.classList.add(
+        "cutting"
+      );
+
+
+      setTimeout(
+        () => {
+
+          if (wishMessage) {
+
+            wishMessage.classList.remove(
+              "hidden"
+            );
+
+          }
+
+          launchConfetti();
+
+        },
+        1200
+      );
+
     }
+
+
+    /* =========================
+       SWIPE CẮT BÁNH
+       ========================= */
 
     function setupCakeSwipe() {
-      const cakeArea = document.getElementById("cakeCutArea");
 
-      if (!cakeArea) return;
+      const cakeArea =
+        document.getElementById(
+          "cakeCutArea"
+        );
 
-      /* =========================
-         ĐIỆN THOẠI
-         ========================= */
 
-      cakeArea.addEventListener("touchstart", (e) => {
-        if (cakeCutDone) return;
+      if (!cakeArea)
+        return;
 
-        touchStartY = e.touches[0].clientY;
-      }, { passive: true });
 
-      cakeArea.addEventListener("touchend", (e) => {
-        if (cakeCutDone) return;
+      /* ĐIỆN THOẠI */
 
-        const touchEndY = e.changedTouches[0].clientY;
-        const swipeDistance = touchEndY - touchStartY;
+      cakeArea.addEventListener(
+        "touchstart",
+        (e) => {
 
-        if (swipeDistance > 60) {
-          cutCake();
+          if (cakeCutDone)
+            return;
+
+
+          touchStartY =
+            e.touches[0].clientY;
+
+        },
+        {
+          passive: true
         }
-      }, { passive: true });
+      );
 
 
-      /* =========================
-         LAPTOP / CHUỘT
-         ========================= */
+      cakeArea.addEventListener(
+        "touchend",
+        (e) => {
 
-      cakeArea.addEventListener("mousedown", (e) => {
-        if (cakeCutDone) return;
+          if (cakeCutDone)
+            return;
 
-        mouseStartY = e.clientY;
-        isDragging = true;
-      });
 
-      cakeArea.addEventListener("mouseup", (e) => {
-        if (!isDragging || cakeCutDone) return;
+          const touchEndY =
+            e.changedTouches[0].clientY;
 
-        const mouseEndY = e.clientY;
-        const dragDistance = mouseEndY - mouseStartY;
 
-        if (dragDistance > 60) {
-          cutCake();
+          const swipeDistance =
+            touchEndY -
+            touchStartY;
+
+
+          if (
+            swipeDistance > 60
+          ) {
+
+            cutCake();
+
+          }
+
+        },
+        {
+          passive: true
         }
+      );
 
-        isDragging = false;
-      });
 
-      cakeArea.addEventListener("mouseleave", () => {
-        isDragging = false;
-      });
+      /* CHUỘT */
+
+      cakeArea.addEventListener(
+        "mousedown",
+        (e) => {
+
+          if (cakeCutDone)
+            return;
+
+
+          mouseStartY =
+            e.clientY;
+
+          isDragging = true;
+
+        }
+      );
+
+
+      cakeArea.addEventListener(
+        "mouseup",
+        (e) => {
+
+          if (
+            !isDragging ||
+            cakeCutDone
+          )
+            return;
+
+
+          const mouseEndY =
+            e.clientY;
+
+
+          const dragDistance =
+            mouseEndY -
+            mouseStartY;
+
+
+          if (
+            dragDistance > 60
+          ) {
+
+            cutCake();
+
+          }
+
+
+          isDragging = false;
+
+        }
+      );
+
+
+      cakeArea.addEventListener(
+        "mouseleave",
+        () => {
+
+          isDragging = false;
+
+        }
+      );
+
     }
+
+
+    /* =========================
+       TIM BAY
+       ========================= */
 
     function createFloatingHeart() {
-      const heart = document.createElement("div");
 
-      heart.className = "floating-heart";
+      const heart =
+        document.createElement(
+          "div"
+        );
+
+
+      heart.className =
+        "floating-heart";
+
 
       heart.textContent =
-        ["💖", "💕", "💗", "💘"][
-          Math.floor(Math.random() * 4)
+        [
+          "💖",
+          "💕",
+          "💗",
+          "💘"
+        ][
+          Math.floor(
+            Math.random() * 4
+          )
         ];
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
 
-      document.body.appendChild(heart);
+      heart.style.left =
+        Math.random() * 100 + "vw";
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
+
+      heart.style.animationDuration =
+        4 +
+        Math.random() * 3 +
+        "s";
+
+
+      document.body.appendChild(
+        heart
+      );
+
+
+      setTimeout(
+        () => {
+
+          heart.remove();
+
+        },
+        7000
+      );
+
     }
 
-    setInterval(createFloatingHeart, 700);
+
+    setInterval(
+      createFloatingHeart,
+      700
+    );
+
+
+    /* =========================
+       CONFETTI
+       ========================= */
 
     function launchConfetti() {
+
       const colors = [
+
         "#ff5f9e",
         "#ffd166",
         "#9b5de5",
         "#00bbf9",
         "#00f5d4"
+
       ];
 
-      for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement("div");
 
-        confetti.className = "confetti";
-        confetti.style.left = Math.random() * 100 + "vw";
+      for (
+        let i = 0;
+        i < 50;
+        i++
+      ) {
+
+        const confetti =
+          document.createElement(
+            "div"
+          );
+
+
+        confetti.className =
+          "confetti";
+
+
+        confetti.style.left =
+          Math.random() * 100 +
+          "vw";
+
+
         confetti.style.background =
-          colors[Math.floor(Math.random() * colors.length)];
+          colors[
+            Math.floor(
+              Math.random()
+              *
+              colors.length
+            )
+          ];
+
 
         confetti.style.animationDuration =
-          2 + Math.random() * 2 + "s";
+          2 +
+          Math.random() * 2 +
+          "s";
 
-        document.body.appendChild(confetti);
 
-        setTimeout(() => {
-          confetti.remove();
-        }, 4000);
+        document.body.appendChild(
+          confetti
+        );
+
+
+        setTimeout(
+          () => {
+
+            confetti.remove();
+
+          },
+          4000
+        );
+
       }
+
     }
 
+
+    /* =========================
+       CHẠY BAN ĐẦU
+       ========================= */
+
     renderStep();
+
   </script>
 
 </body>
