@@ -474,7 +474,27 @@
 
       margin-top: 14px;
     }
+.exit-letter-btn {
+  margin-top: 18px;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff5f9e, #ff2474);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255,70,140,.25);
+  transition: .2s ease;
+}
 
+.exit-letter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.exit-letter-btn:active {
+  transform: scale(.95);
+}
     button {
       border: none;
 
@@ -1016,7 +1036,204 @@
       }
 
     }
+/* =========================
+   LOVE LETTER
+========================= */
 
+.letter-area {
+  width: 100%;
+  max-width: 390px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.letter-area h1 {
+  margin-bottom: 5px;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 65px auto 20px;
+  cursor: pointer;
+  animation: envelopeFloat 2s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.envelope-body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #ff9fc4, #ff6fa8);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 12px 25px rgba(255,70,140,.25);
+  z-index: 2;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 0;
+  height: 0;
+
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 105px solid #ff4f91;
+
+  transform-origin: top center;
+  transition: transform .8s ease;
+
+  z-index: 5;
+}
+
+.envelope-heart {
+  position: absolute;
+  left: 50%;
+  top: 92px;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 42px;
+
+  z-index: 6;
+
+  transition: opacity .3s ease;
+}
+
+.letter-paper {
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  transform: translateX(-50%) translateY(0);
+
+  width: 350px;
+  max-width: 90vw;
+  max-height: 430px;
+
+  padding: 25px 24px;
+  background: #fffdf7;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
+  z-index: 3;
+  opacity: 0;
+
+  transition: transform 1s ease, opacity .5s ease;
+
+  pointer-events: none;
+  text-align: left;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.envelope.opened {
+  animation: none;
+}
+
+.envelope.opened .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.opened .envelope-heart {
+  opacity: 0;
+}
+
+.envelope.opened .letter-paper {
+  transform:
+    translateX(-50%)
+    translateY(-175px);
+
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+.letter-title {
+  text-align: center;
+
+  color: #ff3d82;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  margin-bottom: 15px;
+}
+
+.letter-content {
+  color: #555;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  white-space: pre-line;
+}
+
+.letter-sign {
+  text-align: right;
+
+  margin-top: 18px;
+
+  color: #ff3d82;
+
+  font-weight: 800;
+}
+
+.letter-hint {
+  color: #ff4f91;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+
+  .envelope {
+    width: 280px;
+    height: 185px;
+  }
+
+  .envelope-flap {
+    border-left-width: 140px;
+    border-right-width: 140px;
+    border-top-width: 100px;
+  }
+
+  @media(max-width:480px) {
+  .letter-paper {
+    width: 320px;
+    max-width: 88vw;
+    max-height: 400px;
+    padding: 22px 20px;
+  }
+
+  .letter-content {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+}
 
     /* =========================
        MOBILE
@@ -1101,7 +1318,6 @@
   </style>
 </head>
 
-
 <body>
 
   <div class="app">
@@ -1116,7 +1332,7 @@
       class="badge"
       id="stepBadge"
     >
-      Step 1 of 6
+      Step 1 of 7
     </div>
 
 
@@ -1363,20 +1579,139 @@
       `;
 
     }
+/* =========================
+   LOVE LETTER
+========================= */
 
+function renderLoveLetter() {
+
+  return `
+
+    <div class="letter-area">
+
+      <h1>
+        💌 Một lá thư dành cho bé Ngân 💌
+      </h1>
+
+      <p>
+        Có một thứ cuối cùng anh muốn gửi cho bé...
+      </p>
+
+      <div
+        class="envelope"
+        id="loveEnvelope"
+      >
+
+        <div class="letter-paper">
+
+          <div class="letter-title">
+            Gởi bé Ngân iuu dấu của anh! 💗
+          </div>
+
+          <div class="letter-content">Chúc bé 1 tuổi mới thật rực rỡ và hạnh phúc🥰🥰
+
+Anh không chắc sau này mình còn có thể bên nhau nữa không nhưng ngay tại đây, ngay lúc này anh chỉ biết là bé là người anh yêu đặc biệt, người mà anh luôn nghĩ tới đầu tiên mỗi khi thức giấc, người mà anh luôn muốn giữ cho riêng mình vì sợ nhiều người dòm ngó 😰😰
+
+281 ngày qua dù không dài nhưng e đã cho anh cảm giác được yêu thương, được an ủi, cho anh biết được là trên đời vẫn còn người thương anh nhiều như vậy 😘
+
+Chỉ mong sao vào ngày này năm sau hay mãi về sau này đi nữa thì người cùng e đón sinh nhật luôn là anh ( hoặc con chúng ta 😅😅 )</div>
+
+          <div class="letter-sign">
+            Yêu bé nhiều ❤️
+          </div>
+
+        </div>
+
+        <div class="envelope-flap"></div>
+
+        <div class="envelope-body"></div>
+
+        <div class="envelope-heart">
+          💗
+        </div>
+
+      </div>
+
+      <div
+        class="letter-hint"
+        id="letterHint"
+      >
+        👆 Chạm vào phong thư để mở nhé 💌
+      </div>
+<button class="exit-letter-btn" id="exitLetterBtn">
+  ✕ Thoát thư
+</button>
+    </div>
+
+  `;
+
+}
+
+
+function setupLoveLetter() {
+const exitBtn = document.getElementById("exitLetterBtn");
+  const envelope =
+    document.getElementById("loveEnvelope");
+
+  const hint =
+    document.getElementById("letterHint");
+
+  if (!envelope) return;
+
+  envelope.addEventListener("click", () => {
+
+    // Nếu thư đang mở → đóng lại
+    if (envelope.classList.contains("opened")) {
+
+      envelope.classList.remove("opened");
+
+      if (hint) {
+        hint.textContent =
+          "👆 Chạm vào phong thư để mở lại 💌";
+      }
+
+      return;
+    }
+
+    // Nếu thư đang đóng → mở ra
+    envelope.classList.add("opened");
+
+    if (hint) {
+      hint.textContent =
+        "💕 Chạm vào thư để đóng lại";
+    }
+if (exitBtn) {
+  exitBtn.addEventListener("click", () => {
+    currentStep = 0;
+    resetMemoryGame();
+
+    renderStep();
+
+    document.querySelector(".app").scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+    launchConfetti();
+
+  });
+
+}
 
     /* =========================
        RENDER
        ========================= */
 
     function renderStep() {
+      nextBtn.style.display = "block";
 
       stepBadge.textContent =
-        `Step ${currentStep + 1} of 6`;
+        `Step ${currentStep + 1} of 7`;
 
       progressBar.style.width =
         `${(
-          (currentStep + 1) / 6
+          (currentStep + 1) / 7
         ) * 100}%`;
 
 
@@ -1392,30 +1727,32 @@
        */
 
       if (
-        currentStep === 3 &&
-        matchedPairs < 6
-      ) {
+  currentStep === 3 &&
+  matchedPairs < 6
+) {
 
-        nextBtn.textContent =
-          "Ghép hết thẻ 💝";
+  nextBtn.textContent =
+    "Ghép hết thẻ 💝";
 
-      }
+}
+else if (currentStep === 5) {
 
-      else if (
-        currentStep === 5
-      ) {
+  nextBtn.textContent =
+    "Mở thư 💌";
 
-        nextBtn.textContent =
-          "Quay lại";
+}
+else if (currentStep === 6) {
 
-      }
+  nextBtn.style.display =
+    "none";
 
-      else {
+}
+else {
 
-        nextBtn.textContent =
-          "Tiếp tục";
+  nextBtn.textContent =
+    "Tiếp tục";
 
-      }
+}
 
 
       /* =========================
@@ -1632,7 +1969,7 @@
          STEP 6 - KẾT
          ========================= */
 
-      if (currentStep === 5) {
+      if (currentStep === 5)  {
 
         content.innerHTML = `
 
@@ -1672,7 +2009,25 @@
         launchConfetti();
 
       }
+/* =========================
+   STEP 7 - LOVE LETTER
+========================= */
 
+if (currentStep === 6) {
+
+  content.innerHTML =
+    renderLoveLetter();
+
+  nextBtn.style.display =
+    "none";
+
+  setTimeout(() => {
+
+    setupLoveLetter();
+
+  }, 50);
+
+}
     }
 
 
@@ -2123,7 +2478,7 @@
            ===================== */
 
         if (
-          currentStep === 5
+          currentStep === 6
         ) {
 
           currentStep = 0;
