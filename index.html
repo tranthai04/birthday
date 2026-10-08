@@ -1005,7 +1005,14 @@
 
     }
 
-
+.letter-ending-image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 5px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
     .confetti {
 
       position: fixed;
@@ -1319,7 +1326,7 @@
 </head>
 
 <body>
-
+<audio id="bgMusic" src="1doi.mp3" loop></audio>
   <div class="app">
 
     <!-- THANH TIẾN TRÌNH -->
@@ -1619,7 +1626,11 @@ Chỉ mong sao vào ngày này năm sau hay mãi về sau này đi nữa thì ng
           <div class="letter-sign">
             Yêu bé nhiều ❤️
           </div>
-
+<img 
+  src="image01.jpg" 
+  class="letter-ending-image" 
+  alt="sinh nhật 18 tuổi lần thứ 4"
+>
         </div>
 
         <div class="envelope-flap"></div>
@@ -3017,7 +3028,13 @@ if (currentStep === 6) {
        ========================= */
 
     renderStep();
+document.addEventListener("click", function () {
+  const music = document.getElementById("bgMusic");
 
+  if (music && music.paused) {
+    music.play().catch(() => {});
+  }
+}, { once: true });
   </script>
 
 </body>
