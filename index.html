@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <title>Birthday Love Surprise</title>
-
   <style>
     * {
       margin: 0;
@@ -573,7 +572,11 @@
       progressBar.style.width = `${((currentStep + 1) / 5) * 100}%`;
 
       backBtn.style.visibility = currentStep === 0 ? "hidden" : "visible";
+<<<<<<< HEAD
       nextBtn.textContent = currentStep === 4 ? "Quay lại" : "Tiếp tục";
+=======
+      nextBtn.textContent = currentStep === 4 ? "Replay" : "Tiếp tục";
+>>>>>>> b038b39bb983cebda7e096903a18440d28fe1c0c
 
       if (currentStep === 0) {
         content.innerHTML = `
@@ -581,9 +584,15 @@
           ${renderGirlPicture()}
           ${cuteGif("🎁")}
           <p>Nhập tên bé iuu vào nè 😘😘 </p>
+<<<<<<< HEAD
           <input id="nameInput" placeholder="Nhập đây nè bà già ...." />
           <div class="love-note">
             Có bất ngờ đó bà già, ráng chơi tới cuối nghe hăm 🤣 ✨
+=======
+          <input id="nameInput" placeholder="Nhập đây nè bà già ...."  />
+          <div class="love-note">
+            Có bất ngờ đó bà già , ráng chơi tới cuối nghe hăm 🤣 ✨
+>>>>>>> b038b39bb983cebda7e096903a18440d28fe1c0c
           </div>
         `;
       }
